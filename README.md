@@ -14,7 +14,7 @@ I’m a **Computer Engineering Student** passionate about **learning, web develo
 ---
 
 ## 💻 My Website
-Check out my personal website: [taherkachwala.github.io](https://taherkachwala.github.io) 🌐  
+Check out my personal website: [taherkachwala.github.io](https://taher-kach.github.io/taherkachwala.github.io/) 🌐  
 
 ---
 
