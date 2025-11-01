@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taher Kachwala Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <header>
+    <nav class="navbar">
+      <div class="logo">TK</div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle">☀️</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section home">
+      <div class="intro">
+        <h1>Hi — I’m <span class="accent">Taher Kachwala</span>.</h1>
+        <p>I’m a first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering. I’m eager to explore the world of computer science, build meaningful projects, and continuously grow as a developer.</p>
+        <div class="btn-group">
+          <a href="#projects" class="btn primary">See Projects</a>
+          <a href="#contact" class="btn secondary">Contact</a>
+        </div>
+      </div>
+      <div class="photo">
+        <div class="placeholder">Placeholder Image</div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <h2>About Me</h2>
+      <p>I am a first-year engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE). I’m deeply interested in computer science and its potential to solve real-world problems. I’m eager to learn new technologies, collaborate with peers, and explore innovative projects.</p>
+      <h3>Skills</h3>
+      <ul class="skills">
+        <li>Fast Learner</li>
+        <li>Active Listener</li>
+        <li>Integrity</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="card">
+          <div class="image">Image</div>
+          <div class="card-content">
+            <h4>Placeholder Project 1</h4>
+            <p>Sample description for your project.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">Image</div>
+          <div class="card-content">
+            <h4>Placeholder Project 2</h4>
+            <p>Sample description for your project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <div class="photo-box">Placeholder</div>
+        <div class="photo-box">Placeholder</div>
+        <div class="photo-box">Placeholder</div>
+        <div class="photo-box">Placeholder</div>
+        <div class="photo-box">Placeholder</div>
+        <div class="photo-box">Placeholder</div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <form id="contact-form">
+        <label>Name</label>
+        <input type="text" id="name" required />
+        <label>Email</label>
+        <input type="email" id="email" required />
+        <label>Message</label>
+        <textarea id="message" rows="5" required></textarea>
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+      <div class="socials">
+        <p>Email: <a href="mailto:taherkachwala6671@gmail.com">taherkachwala6671@gmail.com</a></p>
+        <p>Location: Mumbai, India</p>
+        <p>Follow:</p>
+        <a href="https://github.com/taher-kach">GitHub</a> |
+        <a href="https://www.linkedin.com/in/taher-kachwala-630667370/">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Taher Kachwala — Built with a minimalist approach.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
