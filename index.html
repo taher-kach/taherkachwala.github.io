@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="dark preload">
-  
-  <!-- 🔄 Page Loader -->
-<div id="page-loader">
-  <div class="loader-spinner"></div>
-  <div class="loader-text">Loading Portfolio...</div>
-</div>
+
+  <!-- 🌀 Page Loader -->
+  <div id="page-loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading Portfolio...</div>
+  </div>
 
   <header>
     <nav class="navbar glass">
@@ -32,65 +32,90 @@
   </header>
 
   <main>
+    <!-- 🏠 Home -->
     <section id="home" class="section home fade-in">
       <div class="intro">
         <h1 id="typing-text">Hi — I’m <span class="accent">Taher Kachwala</span>.</h1>
-        <p>I’m a first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering. I’m eager to explore the world of computer science, build meaningful projects, and continuously grow as a developer.</p>
+        <p class="intro-text">
+          I’m a first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE).  
+          I’m passionate about building digital experiences that are elegant, efficient, and intuitive.  
+          My curiosity drives me to learn continuously — exploring how design and technology can work together to create impact.
+        </p>
         <div class="btn-group">
-          <a href="#projects" class="btn primary">See Projects</a>
-          <a href="#contact" class="btn secondary">Contact</a>
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#contact" class="btn secondary">Get in Touch</a>
         </div>
-      </div>
-      <div class="photo parallax">
-        <img src="https://source.unsplash.com/random/300x300?portrait,person" alt="Placeholder" class="profile-img" />
       </div>
     </section>
 
+    <!-- 🧠 About -->
     <section id="about" class="section about fade-in">
       <h2>About Me</h2>
-      <p>I am a first-year engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE). I’m deeply interested in computer science and its potential to solve real-world problems. I’m eager to learn new technologies, collaborate with peers, and explore innovative projects.</p>
-      <h3>Skills</h3>
+      <p class="about-text">
+        Hello! I’m Taher — a passionate learner and amateur developer fascinated by the endless potential of computer science.  
+        As a first-year engineering student at FrCRCE, I’m focused on building a strong foundation in programming, algorithms, and system design.
+      </p>
+      <p class="about-text">
+        I enjoy experimenting with front-end development, exploring frameworks, and designing interactive experiences that combine simplicity and creativity.  
+        Beyond coding, I love reading about emerging technologies, open-source software, and AI-driven solutions.
+      </p>
+      <p class="about-text">
+        My goal is to grow into a well-rounded engineer who can bridge the gap between logic and design — turning innovative ideas into user-friendly digital solutions.
+      </p>
+
+      <h3>Skills & Interests</h3>
       <ul class="skills">
         <li>Fast Learner</li>
         <li>Active Listener</li>
         <li>Integrity</li>
-        <li>Basic Web Development</li>
+        <li>Web Development</li>
         <li>Problem Solving</li>
+        <li>UI/UX Design</li>
       </ul>
     </section>
 
+    <!-- 💻 Projects -->
     <section id="projects" class="section projects fade-in">
       <h2>Projects</h2>
       <div class="project-grid">
         <div class="card hover-float">
-          <div class="image"><img src="https://source.unsplash.com/random/400x250?frontend,code" alt="Project 1"></div>
+          <div class="image"><img src="https://source.unsplash.com/random/400x250?frontend,web" alt="Project 1"></div>
           <div class="card-content">
-            <h4>Portfolio Project</h4>
-            <p>A responsive portfolio built with smooth animations, elegant design, and clean layout.</p>
+            <h4>Portfolio Website</h4>
+            <p>A fully responsive personal portfolio built with smooth animations and EmailJS integration.</p>
           </div>
         </div>
         <div class="card hover-float">
           <div class="image"><img src="https://source.unsplash.com/random/400x250?design,ui" alt="Project 2"></div>
           <div class="card-content">
             <h4>Creative Landing Page</h4>
-            <p>An animated website concept with minimalist modern interface and motion design.</p>
+            <p>An animated and minimalist landing page concept showcasing clean design principles.</p>
+          </div>
+        </div>
+        <div class="card hover-float">
+          <div class="image"><img src="https://source.unsplash.com/random/400x250?data,visualization" alt="Project 3"></div>
+          <div class="card-content">
+            <h4>Data Visualization Dashboard</h4>
+            <p>An early project exploring how to display structured data through interactive visuals.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- 🖼️ Gallery -->
     <section id="gallery" class="section gallery fade-in">
       <h2>Gallery</h2>
       <div class="gallery-grid">
         <img src="https://source.unsplash.com/random/400x300?workspace" class="photo-box hover-zoom" alt="Gallery 1" />
         <img src="https://source.unsplash.com/random/400x300?coding" class="photo-box hover-zoom" alt="Gallery 2" />
         <img src="https://source.unsplash.com/random/400x300?developer" class="photo-box hover-zoom" alt="Gallery 3" />
-        <img src="https://source.unsplash.com/random/400x300?laptop" class="photo-box hover-zoom" alt="Gallery 4" />
-        <img src="https://source.unsplash.com/random/400x300?office" class="photo-box hover-zoom" alt="Gallery 5" />
-        <img src="https://source.unsplash.com/random/400x300?programming" class="photo-box hover-zoom" alt="Gallery 6" />
+        <img src="https://source.unsplash.com/random/400x300?tech" class="photo-box hover-zoom" alt="Gallery 4" />
+        <img src="https://source.unsplash.com/random/400x300?ui,ux" class="photo-box hover-zoom" alt="Gallery 5" />
+        <img src="https://source.unsplash.com/random/400x300?software" class="photo-box hover-zoom" alt="Gallery 6" />
       </div>
     </section>
 
+    <!-- 📩 Contact -->
     <section id="contact" class="section contact fade-in">
       <h2>Contact</h2>
       <form id="contact-form">
@@ -122,7 +147,7 @@
     <img class="modal-content" id="modal-img">
   </div>
 
-  <!-- ✅ EmailJS SDK -->
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
