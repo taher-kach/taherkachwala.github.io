@@ -1,4 +1,4 @@
-// Page loader
+// ✅ Loader Fade-Out
 window.addEventListener("load", () => {
   const loader = document.getElementById("page-loader");
   setTimeout(() => {
@@ -7,64 +7,57 @@ window.addEventListener("load", () => {
   }, 700);
 });
 
-// Typing animation
-const typingText = document.getElementById('typing-text');
-const rawHTML = typingText.innerHTML;
-typingText.innerHTML = '';
-let i = 0;
-function type() {
-  const temp = document.createElement('div');
-  temp.innerHTML = rawHTML.slice(0, i + 1);
-  typingText.innerHTML = temp.innerHTML;
-  i++;
-  if (i < rawHTML.length) requestAnimationFrame(type);
-}
-type();
+// ✅ Mobile Menu
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
 
-// Fade-in scroll animation
-const faders = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('show');
+// ✅ Active Nav Link Highlight
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-links a");
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80;
+    if (pageYOffset >= sectionTop) current = section.getAttribute("id");
   });
-}, { threshold: 0.2 });
-faders.forEach(el => observer.observe(el));
-
-// Gallery modal
-const modal = document.getElementById('img-modal');
-const modalImg = document.getElementById('modal-img');
-document.querySelectorAll('.gallery-grid img').forEach(img => {
-  img.addEventListener('click', () => {
-    modal.style.display = 'flex';
-    modalImg.src = img.src;
+  navItems.forEach(a => {
+    a.classList.remove("active");
+    if (a.getAttribute("href").includes(current)) a.classList.add("active");
   });
 });
-document.getElementById('modal-close').addEventListener('click', () => modal.style.display = 'none');
-modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
 
-// EmailJS setup
-emailjs.init("QRv3MCk-QXrWfU1g9");
-document.getElementById('contact-form').addEventListener('submit', e => {
+// ✅ Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.reveal');
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  revealElements.forEach(el => {
+    const boxTop = el.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) el.classList.add('show');
+    else el.classList.remove('show');
+  });
+};
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+
+// ✅ EmailJS Integration
+(function() {
+  emailjs.init("QRv3MCk-QXrWfU1g9");
+})();
+const contactForm = document.getElementById("contact-form");
+contactForm.addEventListener("submit", function(e) {
   e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  if (!name || !email || !message) return showToast('⚠️ Please fill all fields.');
-  if (!/^\S+@\S+\.\S+$/.test(email)) return showToast('⚠️ Invalid email address.');
-
-  emailjs.send('service_vo3krwu', 'template_5ckaucr', { from_name: name, from_email: email, message })
-    .then(() => { showToast('✅ Message sent successfully!'); e.target.reset(); })
-    .catch(() => showToast('❌ Failed to send message. Try again later.'));
+  emailjs.sendForm("service_vo3krwu", "template_5ckaucr", this)
+    .then(() => {
+      const toast = document.createElement("div");
+      toast.className = "success-toast";
+      toast.textContent = "Message sent successfully!";
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3500);
+      contactForm.reset();
+    }, (error) => {
+      alert("Failed to send message: " + JSON.stringify(error));
+    });
 });
-
-// Toast message
-function showToast(msg) {
-  const toast = document.createElement('div');
-  toast.textContent = msg;
-  toast.className = 'success-toast';
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 3500);
-}
-
-// Year
-document.getElementById('year').textContent = new Date().getFullYear();
