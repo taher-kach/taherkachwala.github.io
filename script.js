@@ -1,10 +1,10 @@
-// Loader fade-out animation
+// Page loader
 window.addEventListener("load", () => {
   const loader = document.getElementById("page-loader");
   setTimeout(() => {
     loader.classList.add("fade-out");
     document.body.classList.add("loaded");
-  }, 700); // Adjust delay if needed
+  }, 700);
 });
 
 // Typing animation
@@ -21,38 +21,16 @@ function type() {
 }
 type();
 
-// Mobile menu toggle
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active');
-  navLinks.classList.toggle('open');
-});
-
-// Scrollspy
-const sections = document.querySelectorAll('section');
-const navItems = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(sec => {
-    const top = sec.offsetTop - 120;
-    const height = sec.clientHeight;
-    if (pageYOffset >= top && pageYOffset < top + height) current = sec.id;
-  });
-  navItems.forEach(a => {
-    a.classList.remove('active');
-    if (a.getAttribute('href') === `#${current}`) a.classList.add('active');
-  });
-});
-
-// Fade-in animation
+// Fade-in scroll animation
 const faders = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+  });
 }, { threshold: 0.2 });
 faders.forEach(el => observer.observe(el));
 
-// Modal viewer
+// Gallery modal
 const modal = document.getElementById('img-modal');
 const modalImg = document.getElementById('modal-img');
 document.querySelectorAll('.gallery-grid img').forEach(img => {
@@ -64,33 +42,22 @@ document.querySelectorAll('.gallery-grid img').forEach(img => {
 document.getElementById('modal-close').addEventListener('click', () => modal.style.display = 'none');
 modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
 
-// ✅ Initialize EmailJS with your credentials
+// EmailJS setup
 emailjs.init("QRv3MCk-QXrWfU1g9");
-
-// Contact form (with success toast)
 document.getElementById('contact-form').addEventListener('submit', e => {
   e.preventDefault();
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
-
   if (!name || !email || !message) return showToast('⚠️ Please fill all fields.');
   if (!/^\S+@\S+\.\S+$/.test(email)) return showToast('⚠️ Invalid email address.');
 
-  const params = { from_name: name, from_email: email, message: message };
-
-  emailjs.send('service_vo3krwu', 'template_5ckaucr', params)
-    .then(() => {
-      showToast('✅ Message sent successfully!');
-      e.target.reset();
-    })
-    .catch(err => {
-      console.error(err);
-      showToast('❌ Failed to send message. Try again later.');
-    });
+  emailjs.send('service_vo3krwu', 'template_5ckaucr', { from_name: name, from_email: email, message })
+    .then(() => { showToast('✅ Message sent successfully!'); e.target.reset(); })
+    .catch(() => showToast('❌ Failed to send message. Try again later.'));
 });
 
-// Toast message function
+// Toast message
 function showToast(msg) {
   const toast = document.createElement('div');
   toast.textContent = msg;
