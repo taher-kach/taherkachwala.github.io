@@ -5,150 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taher Kachwala | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
-<body class="dark preload">
+<body class="preload">
 
-  <!-- 🌀 Page Loader -->
+  <!-- Loader -->
   <div id="page-loader">
     <div class="loader-spinner"></div>
     <div class="loader-text">Loading Portfolio...</div>
   </div>
 
+  <!-- Header -->
   <header>
     <nav class="navbar glass">
-      <div class="logo">TK</div>
-      <button id="menu-toggle" class="menu-toggle">
+      <div class="logo">Taher Kachwala</div>
+      <button class="menu-toggle" id="menu-toggle">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="theme-toggle" class="theme-btn">☀️</button>
     </nav>
   </header>
 
-  <main>
-    <!-- 🏠 Home -->
-    <section id="home" class="section home fade-in">
-      <div class="intro">
-        <h1 id="typing-text">Hi — I’m <span class="accent">Taher Kachwala</span>.</h1>
-        <p class="intro-text">
-          I’m a first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE).  
-          I’m passionate about building digital experiences that are elegant, efficient, and intuitive.  
-          My curiosity drives me to learn continuously — exploring how design and technology can work together to create impact.
-        </p>
-        <div class="btn-group">
-          <a href="#projects" class="btn primary">View Projects</a>
-          <a href="#contact" class="btn secondary">Get in Touch</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🧠 About -->
-    <section id="about" class="section about fade-in">
-      <h2>About Me</h2>
-      <p class="about-text">
-        Hello! I’m Taher — a passionate learner and amateur developer fascinated by the endless potential of computer science.  
-        As a first-year engineering student at FrCRCE, I’m focused on building a strong foundation in programming, algorithms, and system design.
+  <!-- Home -->
+  <section class="section home" id="home">
+    <div class="intro fade-in">
+      <h1>Hi, I’m <span class="accent">Taher Kachwala</span></h1>
+      <p class="intro-text">
+        A first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering, eager to explore computer science and build meaningful projects.
       </p>
-      <p class="about-text">
-        I enjoy experimenting with front-end development, exploring frameworks, and designing interactive experiences that combine simplicity and creativity.  
-        Beyond coding, I love reading about emerging technologies, open-source software, and AI-driven solutions.
-      </p>
-      <p class="about-text">
-        My goal is to grow into a well-rounded engineer who can bridge the gap between logic and design — turning innovative ideas into user-friendly digital solutions.
-      </p>
+      <div class="btn-group">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
+      </div>
+    </div>
+  </section>
 
-      <h3>Skills & Interests</h3>
-      <ul class="skills">
-        <li>Fast Learner</li>
-        <li>Active Listener</li>
-        <li>Integrity</li>
-        <li>Web Development</li>
-        <li>Problem Solving</li>
-        <li>UI/UX Design</li>
-      </ul>
-    </section>
+  <!-- About -->
+  <section class="section about" id="about">
+    <h2 class="reveal">About Me</h2>
+    <p class="about-text reveal delay-1">
+      I’m a first-year engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE),
+      fascinated by the power of computer science to innovate and transform ideas into real-world solutions.
+    </p>
+    <p class="about-text reveal delay-2">
+      As an amateur developer, I’m passionate about building interactive and modern web applications using HTML, CSS, JavaScript, and frameworks like React.
+      I aim to continuously improve my skills and contribute to projects that make an impact.
+    </p>
+    <p class="about-text reveal delay-3">
+      Beyond coding, I enjoy designing clean user interfaces, exploring new technologies, and learning through collaboration and problem-solving.
+    </p>
+    <ul class="skills reveal delay-4">
+      <li>Fast Learner</li>
+      <li>Active Listener</li>
+      <li>Integrity</li>
+      <li>Curiosity</li>
+      <li>Adaptability</li>
+    </ul>
+  </section>
 
-    <!-- 💻 Projects -->
-    <section id="projects" class="section projects fade-in">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="card hover-float">
-          <div class="image"><img src="https://source.unsplash.com/random/400x250?frontend,web" alt="Project 1"></div>
-          <div class="card-content">
-            <h4>Portfolio Website</h4>
-            <p>A fully responsive personal portfolio built with smooth animations and EmailJS integration.</p>
-          </div>
-        </div>
-        <div class="card hover-float">
-          <div class="image"><img src="https://source.unsplash.com/random/400x250?design,ui" alt="Project 2"></div>
-          <div class="card-content">
-            <h4>Creative Landing Page</h4>
-            <p>An animated and minimalist landing page concept showcasing clean design principles.</p>
-          </div>
-        </div>
-        <div class="card hover-float">
-          <div class="image"><img src="https://source.unsplash.com/random/400x250?data,visualization" alt="Project 3"></div>
-          <div class="card-content">
-            <h4>Data Visualization Dashboard</h4>
-            <p>An early project exploring how to display structured data through interactive visuals.</p>
-          </div>
+  <!-- Projects -->
+  <section class="section projects" id="projects">
+    <h2 class="reveal">Projects</h2>
+    <div class="project-grid">
+      <div class="card hover-float reveal delay-1">
+        <div class="image"><img src="https://source.unsplash.com/600x400/?code" alt=""></div>
+        <div class="card-content">
+          <h4>Interactive Web Portfolio</h4>
+          <p>A responsive portfolio site built with HTML, CSS, and JavaScript featuring animations and EmailJS integration.</p>
         </div>
       </div>
-    </section>
-
-    <!-- 🖼️ Gallery -->
-    <section id="gallery" class="section gallery fade-in">
-      <h2>Gallery</h2>
-      <div class="gallery-grid">
-        <img src="https://source.unsplash.com/random/400x300?workspace" class="photo-box hover-zoom" alt="Gallery 1" />
-        <img src="https://source.unsplash.com/random/400x300?coding" class="photo-box hover-zoom" alt="Gallery 2" />
-        <img src="https://source.unsplash.com/random/400x300?developer" class="photo-box hover-zoom" alt="Gallery 3" />
-        <img src="https://source.unsplash.com/random/400x300?tech" class="photo-box hover-zoom" alt="Gallery 4" />
-        <img src="https://source.unsplash.com/random/400x300?ui,ux" class="photo-box hover-zoom" alt="Gallery 5" />
-        <img src="https://source.unsplash.com/random/400x300?software" class="photo-box hover-zoom" alt="Gallery 6" />
+      <div class="card hover-float reveal delay-2">
+        <div class="image"><img src="https://source.unsplash.com/600x400/?app" alt=""></div>
+        <div class="card-content">
+          <h4>Task Manager</h4>
+          <p>A simple and effective task management web app with clean design and smooth interactions.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 📩 Contact -->
-    <section id="contact" class="section contact fade-in">
-      <h2>Contact</h2>
-      <form id="contact-form">
-        <label>Name</label>
-        <input type="text" id="name" required />
-        <label>Email</label>
-        <input type="email" id="email" required />
-        <label>Message</label>
-        <textarea id="message" rows="5" required></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-      </form>
-      <div class="socials">
-        <p><strong>Email:</strong><br><a href="mailto:taherkachwala6671@gmail.com">taherkachwala6671@gmail.com</a></p>
-        <p><strong>Location:</strong><br>Mumbai, India</p>
-        <p><strong>Follow:</strong><br>
-          <a href="https://github.com/taher-kach">GitHub</a> |
-          <a href="https://www.linkedin.com/in/taher-kachwala-630667370/">LinkedIn</a>
-        </p>
-      </div>
-    </section>
-  </main>
+  <!-- Gallery -->
+  <section class="section gallery" id="gallery">
+    <h2 class="reveal">Gallery</h2>
+    <div class="gallery-grid">
+      <div class="photo-box hover-zoom reveal"><img src="https://source.unsplash.com/random/300x300?technology" alt=""></div>
+      <div class="photo-box hover-zoom reveal delay-1"><img src="https://source.unsplash.com/random/301x301?programming" alt=""></div>
+      <div class="photo-box hover-zoom reveal delay-2"><img src="https://source.unsplash.com/random/302x302?workspace" alt=""></div>
+      <div class="photo-box hover-zoom reveal delay-3"><img src="https://source.unsplash.com/random/303x303?developer" alt=""></div>
+      <div class="photo-box hover-zoom reveal delay-4"><img src="https://source.unsplash.com/random/304x304?coding" alt=""></div>
+      <div class="photo-box hover-zoom reveal delay-4"><img src="https://source.unsplash.com/random/305x305?laptop" alt=""></div>
+    </div>
+  </section>
 
-  <footer>
-    <p>© <span id="year"></span> Taher Kachwala — Built with a minimalist approach.</p>
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <h2 class="reveal">Contact Me</h2>
+    <form id="contact-form" class="reveal delay-1">
+      <input type="text" name="user_name" placeholder="Your Name" required>
+      <input type="email" name="user_email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
+    <div class="socials reveal delay-2">
+      <p>Email: <a href="mailto:taherkachwala6671@gmail.com">taherkachwala6671@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/taher-kach">github.com/taher-kach</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/taher-kachwala-630667370/">linkedin.com/in/taher-kachwala</a></p>
+    </div>
+  </section>
+
+  <footer class="section">
+    <p>© 2025 Taher Kachwala — Built with passion and minimalism.</p>
   </footer>
 
-  <div id="img-modal" class="modal">
-    <span id="modal-close">&times;</span>
-    <img class="modal-content" id="modal-img">
-  </div>
-
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
