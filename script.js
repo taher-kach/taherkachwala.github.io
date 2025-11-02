@@ -7,6 +7,34 @@ window.addEventListener("load", () => {
   }, 700);
 });
 
+// 🖋️ Typing Animation for Home Section
+document.addEventListener("DOMContentLoaded", () => {
+  const typewriter = document.getElementById("typewriter");
+  const introSubtext = document.getElementById("intro-subtext");
+  const introButtons = document.getElementById("intro-buttons");
+
+  const text = "Hi, I’m Taher Kachwala";
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      typewriter.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 100);
+    } else {
+      typewriter.style.borderRight = "none";
+      setTimeout(() => {
+        introSubtext.style.display = "block";
+        introSubtext.classList.add("fade-in", "show");
+        introButtons.style.display = "flex";
+        introButtons.classList.add("fade-in", "show");
+      }, 400);
+    }
+  }
+
+  setTimeout(type, 1200); // Start typing after loader fade
+});
+
 // ✅ Mobile Menu
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
