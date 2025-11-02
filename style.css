@@ -454,3 +454,50 @@ body.loaded .parallax {
     flex-direction: column;
   }
 }
+/* 🖋️ Typing Animation */
+#typewriter {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #0ea5e9;
+  text-shadow: 0 0 15px rgba(14,165,233,0.4);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #0ea5e9;
+  width: 0;
+  animation: typing 2.8s steps(30, end) forwards, blink 0.8s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 17ch; } /* adjust to match text length */
+}
+@keyframes blink {
+  0%, 50% { border-color: #0ea5e9; }
+  50.1%, 100% { border-color: transparent; }
+}
+
+/* 🌌 Floating Accent Blobs */
+.floating-blobs {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.floating-blobs span {
+  position: absolute;
+  width: 150px; height: 150px;
+  background: rgba(14,165,233,0.15);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: float-blobs 10s infinite ease-in-out;
+}
+.floating-blobs span:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.floating-blobs span:nth-child(2) { bottom: 15%; right: 25%; animation-delay: 3s; }
+.floating-blobs span:nth-child(3) { top: 40%; right: 10%; animation-delay: 6s; }
+
+@keyframes float-blobs {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+}
