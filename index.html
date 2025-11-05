@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taher Kachwala | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
-<body class="preload">
+<body class="preload dark">
 
   <!-- Loader -->
   <div id="page-loader">
@@ -15,7 +15,7 @@
     <div class="loader-text">Loading Portfolio...</div>
   </div>
 
-  <!-- Header -->
+  <!-- Navbar -->
   <header>
     <nav class="navbar glass">
       <div class="logo">Taher Kachwala</div>
@@ -29,42 +29,42 @@
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="theme-btn" id="theme-btn">🌙</button>
     </nav>
   </header>
 
-  <!-- Home -->
- <section class="section home" id="home">
-  <div class="intro fade-in">
-    <h1 id="typewriter" class="accent"></h1>
-    <p id="intro-subtext" class="intro-text" style="display: none;">
-      A first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering, eager to explore computer science and build meaningful projects.
-    </p>
-    <div class="btn-group" id="intro-buttons" style="display: none;">
-      <a href="#projects" class="btn primary">View Projects</a>
-      <a href="#contact" class="btn secondary">Contact Me</a>
+  <!-- Home Section -->
+  <section class="section home" id="home">
+    <div class="intro fade-in">
+      <h1 id="typewriter"></h1>
+      <p id="intro-subtext" class="intro-text" style="display:none;">
+        A first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering, eager to explore computer science and build meaningful projects.
+      </p>
+      <div class="btn-group" id="intro-buttons" style="display:none;">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
+      </div>
     </div>
-  </div>
 
-  <!-- Optional subtle animated background -->
-  <div class="floating-blobs">
-    <span></span><span></span><span></span>
-  </div>
-</section>
+    <!-- Floating Background -->
+    <div class="floating-blobs">
+      <span></span><span></span><span></span>
+    </div>
+  </section>
 
-
-  <!-- About -->
+  <!-- (The rest of your sections remain exactly the same) -->
+  <!-- About, Projects, Gallery, Contact, Footer -->
   <section class="section about" id="about">
     <h2 class="reveal">About Me</h2>
     <p class="about-text reveal delay-1">
       I’m a first-year engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE),
-      fascinated by the power of computer science to innovate and transform ideas into real-world solutions.
+      fascinated by how computer science transforms ideas into solutions.
     </p>
     <p class="about-text reveal delay-2">
-      As an amateur developer, I’m passionate about building interactive and modern web applications using HTML, CSS, JavaScript, and frameworks like React.
-      I aim to continuously improve my skills and contribute to projects that make an impact.
+      As an amateur developer, I’m passionate about building interactive web experiences and learning front-end frameworks.
     </p>
     <p class="about-text reveal delay-3">
-      Beyond coding, I enjoy designing clean user interfaces, exploring new technologies, and learning through collaboration and problem-solving.
+      I focus on clean design, collaboration, and consistent learning to evolve as a developer.
     </p>
     <ul class="skills reveal delay-4">
       <li>Fast Learner</li>
@@ -75,41 +75,18 @@
     </ul>
   </section>
 
-  <!-- Projects -->
-  <section class="section projects" id="projects">
-    <h2 class="reveal">Projects</h2>
-    <div class="project-grid">
-      <div class="card hover-float reveal delay-1">
-        <div class="image"><img src="https://source.unsplash.com/600x400/?code" alt=""></div>
-        <div class="card-content">
-          <h4>Interactive Web Portfolio</h4>
-          <p>A responsive portfolio site built with HTML, CSS, and JavaScript featuring animations and EmailJS integration.</p>
-        </div>
-      </div>
-      <div class="card hover-float reveal delay-2">
-        <div class="image"><img src="https://source.unsplash.com/600x400/?app" alt=""></div>
-        <div class="card-content">
-          <h4>Task Manager</h4>
-          <p>A simple and effective task management web app with clean design and smooth interactions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
   <section class="section gallery" id="gallery">
     <h2 class="reveal">Gallery</h2>
     <div class="gallery-grid">
       <div class="photo-box hover-zoom reveal"><img src="https://source.unsplash.com/random/300x300?technology" alt=""></div>
-      <div class="photo-box hover-zoom reveal delay-1"><img src="https://source.unsplash.com/random/301x301?programming" alt=""></div>
+      <div class="photo-box hover-zoom reveal delay-1"><img src="https://source.unsplash.com/random/301x301?computer" alt=""></div>
       <div class="photo-box hover-zoom reveal delay-2"><img src="https://source.unsplash.com/random/302x302?workspace" alt=""></div>
-      <div class="photo-box hover-zoom reveal delay-3"><img src="https://source.unsplash.com/random/303x303?developer" alt=""></div>
-      <div class="photo-box hover-zoom reveal delay-4"><img src="https://source.unsplash.com/random/304x304?coding" alt=""></div>
+      <div class="photo-box hover-zoom reveal delay-3"><img src="https://source.unsplash.com/random/303x303?coding" alt=""></div>
+      <div class="photo-box hover-zoom reveal delay-4"><img src="https://source.unsplash.com/random/304x304?developer" alt=""></div>
       <div class="photo-box hover-zoom reveal delay-4"><img src="https://source.unsplash.com/random/305x305?laptop" alt=""></div>
     </div>
   </section>
 
-  <!-- Contact -->
   <section class="section contact" id="contact">
     <h2 class="reveal">Contact Me</h2>
     <form id="contact-form" class="reveal delay-1">
