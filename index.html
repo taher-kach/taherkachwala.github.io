@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taher Kachwala | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body class="preload dark">
@@ -33,48 +33,63 @@
     </nav>
   </header>
 
-  <!-- Home Section -->
+  <!-- 🏠 Home Section -->
   <section class="section home" id="home">
-    <div class="intro fade-in">
-      <h1 id="typewriter"></h1>
-      <p id="intro-subtext" class="intro-text" style="display:none;">
+    <div class="intro">
+      <h1 id="typewriter" class="accent"></h1>
+      <p id="intro-subtext" class="intro-text hidden">
         A first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering, eager to explore computer science and build meaningful projects.
       </p>
-      <div class="btn-group" id="intro-buttons" style="display:none;">
+      <div class="btn-group hidden" id="intro-buttons">
         <a href="#projects" class="btn primary">View Projects</a>
         <a href="#contact" class="btn secondary">Contact Me</a>
       </div>
     </div>
-
-    <!-- Floating Background -->
     <div class="floating-blobs">
       <span></span><span></span><span></span>
     </div>
   </section>
 
-  <!-- (The rest of your sections remain exactly the same) -->
-  <!-- About, Projects, Gallery, Contact, Footer -->
+  <!-- About Section -->
   <section class="section about" id="about">
     <h2 class="reveal">About Me</h2>
     <p class="about-text reveal delay-1">
-      I’m a first-year engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE),
-      fascinated by how computer science transforms ideas into solutions.
+      I’m a first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE),
+      fascinated by how computer science can bring ideas to life.
     </p>
     <p class="about-text reveal delay-2">
-      As an amateur developer, I’m passionate about building interactive web experiences and learning front-end frameworks.
+      I’m an amateur developer who loves creating intuitive, interactive, and minimalistic digital experiences.
     </p>
-    <p class="about-text reveal delay-3">
-      I focus on clean design, collaboration, and consistent learning to evolve as a developer.
-    </p>
-    <ul class="skills reveal delay-4">
+    <ul class="skills reveal delay-3">
       <li>Fast Learner</li>
       <li>Active Listener</li>
       <li>Integrity</li>
       <li>Curiosity</li>
-      <li>Adaptability</li>
     </ul>
   </section>
 
+  <!-- Projects Section -->
+  <section class="section projects" id="projects">
+    <h2 class="reveal">Projects</h2>
+    <div class="project-grid">
+      <div class="card hover-float reveal delay-1">
+        <div class="image"><img src="https://source.unsplash.com/600x400/?code" alt=""></div>
+        <div class="card-content">
+          <h4>Interactive Portfolio</h4>
+          <p>A responsive portfolio built with animations, dark mode, and EmailJS integration.</p>
+        </div>
+      </div>
+      <div class="card hover-float reveal delay-2">
+        <div class="image"><img src="https://source.unsplash.com/600x400/?webapp" alt=""></div>
+        <div class="card-content">
+          <h4>Task Manager</h4>
+          <p>A modern, minimal task manager with smooth UI transitions and local storage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
   <section class="section gallery" id="gallery">
     <h2 class="reveal">Gallery</h2>
     <div class="gallery-grid">
@@ -87,6 +102,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section class="section contact" id="contact">
     <h2 class="reveal">Contact Me</h2>
     <form id="contact-form" class="reveal delay-1">
