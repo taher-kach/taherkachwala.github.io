@@ -1,132 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taher Kachwala | Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Taher Kachwala — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <!-- EmailJS browser SDK (v4) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="preload dark">
 
   <!-- Loader -->
-  <div id="page-loader">
-    <div class="loader-spinner"></div>
-    <div class="loader-text">Loading Portfolio...</div>
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-spinner" aria-hidden="true"></div>
+    <div class="loader-text">Loading Portfolio…</div>
   </div>
 
-  <!-- Navbar -->
+  <!-- Header / Nav -->
   <header>
-    <nav class="navbar glass">
-      <div class="logo">Taher Kachwala</div>
-      <button class="menu-toggle" id="menu-toggle">
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="logo">Taher Kachwala</div>
+      </div>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links" id="nav-links">
+
+      <ul id="nav-links" class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="theme-btn" id="theme-btn">🌙</button>
+
+      <button id="theme-btn" class="theme-btn" aria-label="Toggle theme">🌙</button>
     </nav>
   </header>
 
-  <!-- Home -->
-  <section class="section home" id="home">
-    <div class="intro">
-      <h1 id="typewriter" class="accent"></h1>
-      <p id="intro-subtext" class="intro-text hidden">
-        A first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering, eager to explore computer science and build meaningful projects.
+  <!-- HOME -->
+  <main>
+    <section id="home" class="section home">
+      <div class="home-inner">
+        <h1 id="typewriter" class="typewriter" aria-live="polite"></h1>
+        <p id="intro-subtext" class="intro-text hidden">
+          First-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE). I build small projects to learn and grow.
+        </p>
+
+        <div id="intro-buttons" class="btn-group hidden">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#contact" class="btn secondary">Contact</a>
+        </div>
+
+        <!-- subtle background blobs -->
+        <div class="floating-blobs" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <h2 class="reveal">About Me</h2>
+      <p class="about-text reveal delay-1">
+        Hello — I'm Taher, an enthusiastic first-year engineering student learning web development, UI/UX and core CS fundamentals. I focus on building small, useful projects and improving over time.
       </p>
-      <div class="btn-group hidden" id="intro-buttons">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn secondary">Contact Me</a>
+      <p class="about-text reveal delay-2">
+        Interests: front-end development, design, problem solving, and experimenting with new technologies.
+      </p>
+      <ul class="skills reveal delay-3">
+        <li>Fast learner</li>
+        <li>Active listener</li>
+        <li>Integrity</li>
+        <li>Curiosity</li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS (use your local images in /images/) -->
+    <section id="projects" class="section projects">
+      <h2 class="reveal">Projects</h2>
+      <div class="project-grid">
+        <article class="card reveal delay-1">
+          <div class="image"><img src="images/project1.jpg" alt="Project 1 image (replace with your file)"></div>
+          <div class="card-content">
+            <h3>Interactive Portfolio</h3>
+            <p>Personal portfolio with animations and contact integration.</p>
+          </div>
+        </article>
+
+        <article class="card reveal delay-2">
+          <div class="image"><img src="images/project2.jpg" alt="Project 2 image (replace with your file)"></div>
+          <div class="card-content">
+            <h3>Task Manager</h3>
+            <p>Simple task manager prototype using local storage and clean UI.</p>
+          </div>
+        </article>
       </div>
-    </div>
-    <div class="floating-blobs">
-      <span></span><span></span><span></span>
-    </div>
-  </section>
+    </section>
 
-  <!-- About -->
-  <section class="section about" id="about">
-    <h2 class="reveal">About Me</h2>
-    <p class="about-text reveal delay-1">
-      I’m a first-year Computer Engineering student at Fr. Conceicao Rodrigues College of Engineering (FrCRCE),
-      fascinated by how computer science transforms ideas into real-world innovations.
-    </p>
-    <p class="about-text reveal delay-2">
-      As an amateur developer, I love exploring interactive front-end design and developing projects that focus on usability and aesthetics.
-    </p>
-    <ul class="skills reveal delay-3">
-      <li>Fast Learner</li>
-      <li>Active Listener</li>
-      <li>Integrity</li>
-      <li>Curiosity</li>
-    </ul>
-  </section>
-
-  <!-- Projects -->
-  <section class="section projects" id="projects">
-    <h2 class="reveal">Projects</h2>
-    <div class="project-grid">
-      <div class="card hover-float reveal delay-1">
-        <div class="image">
-          <!-- 🔧 Replace image below with your own -->
-          <img src="images/project1.jpg" alt="Project 1" />
-        </div>
-        <div class="card-content">
-          <h4>Interactive Portfolio</h4>
-          <p>A responsive, animated personal portfolio built with HTML, CSS, and JavaScript.</p>
-        </div>
+    <!-- GALLERY (use your local images in /images/) -->
+    <section id="gallery" class="section gallery">
+      <h2 class="reveal">Gallery</h2>
+      <div class="gallery-grid">
+        <div class="photo-box reveal"><img src="images/gallery1.jpg" alt="Gallery image 1 (replace)"></div>
+        <div class="photo-box reveal delay-1"><img src="images/gallery2.jpg" alt="Gallery image 2 (replace)"></div>
+        <div class="photo-box reveal delay-2"><img src="images/gallery3.jpg" alt="Gallery image 3 (replace)"></div>
+        <div class="photo-box reveal delay-3"><img src="images/gallery4.jpg" alt="Gallery image 4 (replace)"></div>
+        <div class="photo-box reveal delay-4"><img src="images/gallery5.jpg" alt="Gallery image 5 (replace)"></div>
+        <div class="photo-box reveal delay-4"><img src="images/gallery6.jpg" alt="Gallery image 6 (replace)"></div>
       </div>
-      <div class="card hover-float reveal delay-2">
-        <div class="image">
-          <!-- 🔧 Replace image below with your own -->
-          <img src="images/project2.jpg" alt="Project 2" />
-        </div>
-        <div class="card-content">
-          <h4>Task Manager</h4>
-          <p>A modern, minimal task manager web app with smooth UI and local storage.</p>
-        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2 class="reveal">Get in touch</h2>
+
+      <form id="contact-form" class="contact-form reveal delay-1">
+        <input type="text" name="from_name" placeholder="Your name" required />
+        <input type="email" name="reply_to" placeholder="Your email" required />
+        <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+
+      <!-- Social icons (no email text shown) -->
+      <div class="social-icons reveal delay-2" aria-hidden="false">
+        <a class="icon-link" href="https://github.com/taher-kach" target="_blank" rel="noopener" title="GitHub">
+          <!-- GitHub SVG -->
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 008.01 10.95c.59.11.8-.26.8-.57v-2.07c-3.26.71-3.95-1.57-3.95-1.57a3.12 3.12 0 00-1.32-1.73c-1.08-.74.08-.72.08-.72a2.5 2.5 0 011.82 1.22 2.55 2.55 0 003.48 1 2.52 2.52 0 01.76-1.6c-2.6-.3-5.33-1.3-5.33-5.8a4.53 4.53 0 011.2-3.15 4.18 4.18 0 01.11-3.1s.98-.32 3.2 1.2a11 11 0 015.84 0c2.2-1.52 3.18-1.2 3.18-1.2a4.18 4.18 0 01.11 3.1 4.52 4.52 0 011.2 3.15c0 4.52-2.73 5.49-5.34 5.79a2.82 2.82 0 01.8 2.19v3.25c0 .31.21.68.81.56A11.51 11.51 0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+        </a>
+
+        <a class="icon-link" href="https://www.linkedin.com/in/taher-kachwala-630667370/" target="_blank" rel="noopener" title="LinkedIn">
+          <!-- LinkedIn SVG -->
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 2.12 6.11 1 7.5 1S10 2.12 10 3.5 8.89 6 7.5 6 4.98 4.88 4.98 3.5zM4.5 8h6v15h-6V8zm7.5 0h5.6v2.1h.08a6.14 6.14 0 015.52-3c5.9 0 7 3.88 7 8.9V23h-6v-7.9c0-1.89-.03-4.33-2.64-4.33-2.64 0-3.04 2.06-3.04 4.18V23h-6V8z"/></svg>
+        </a>
+
+        <a class="icon-link" href="#contact" title="Open contact form">
+          <!-- Message / Envelope SVG -->
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 4a2 2 0 012-2h16a2 2 0 012 2v1l-10 6L2 5V4zm0 4v10a2 2 0 002 2h16a2 2 0 002-2V8l-10 6L2 8z"/></svg>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Gallery -->
-  <section class="section gallery" id="gallery">
-    <h2 class="reveal">Gallery</h2>
-    <div class="gallery-grid">
-      <!-- 🔧 Add your own images in the /images folder -->
-      <div class="photo-box hover-zoom reveal"><img src="images/gallery1.jpg" alt="Gallery Image 1" /></div>
-      <div class="photo-box hover-zoom reveal delay-1"><img src="images/gallery2.jpg" alt="Gallery Image 2" /></div>
-      <div class="photo-box hover-zoom reveal delay-2"><img src="images/gallery3.jpg" alt="Gallery Image 3" /></div>
-      <div class="photo-box hover-zoom reveal delay-3"><img src="images/gallery4.jpg" alt="Gallery Image 4" /></div>
-      <div class="photo-box hover-zoom reveal delay-4"><img src="images/gallery5.jpg" alt="Gallery Image 5" /></div>
-      <div class="photo-box hover-zoom reveal delay-4"><img src="images/gallery6.jpg" alt="Gallery Image 6" /></div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section contact" id="contact">
-    <h2 class="reveal">Get in Touch</h2>
-    <div class="social-icons reveal delay-1">
-      <a href="https://github.com/taher-kach" target="_blank" title="GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 008.01 10.95c.59.11.8-.26.8-.57v-2.07c-3.26.71-3.95-1.57-3.95-1.57a3.12 3.12 0 00-1.32-1.73c-1.08-.74.08-.72.08-.72a2.5 2.5 0 011.82 1.22 2.55 2.55 0 003.48 1 2.52 2.52 0 01.76-1.6c-2.6-.3-5.33-1.3-5.33-5.8a4.53 4.53 0 011.2-3.15 4.18 4.18 0 01.11-3.1s.98-.32 3.2 1.2a11 11 0 015.84 0c2.2-1.52 3.18-1.2 3.18-1.2a4.18 4.18 0 01.11 3.1 4.52 4.52 0 011.2 3.15c0 4.52-2.73 5.49-5.34 5.79a2.82 2.82 0 01.8 2.19v3.25c0 .31.21.68.81.56A11.51 11.51 0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/taher-kachwala-630667370/" target="_blank" title="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 2.12 6.11 1 7.5 1S10 2.12 10 3.5 8.89 6 7.5 6 4.98 4.88 4.98 3.5zM4.5 8h6v15h-6V8zm7.5 0h5.6v2.1h.08a6.14 6.14 0 015.52-3c5.9 0 7 3.88 7 8.9V23h-6v-7.9c0-1.89-.03-4.33-2.64-4.33-2.64 0-3.04 2.06-3.04 4.18V23h-6V8z"/></svg>
-      </a>
-      <a href="#contact-form" title="Message Me">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12.713l11.985-6.713v13.426L12 12.713zM12 1L0 7.713l12 6.713 12-6.713L12 1zM0 20V8.287l12 6.713 12-6.713V20H0z"/></svg>
-      </a>
-    </div>
-  </section>
-
-  <footer class="section">
-    <p>© 2025 Taher Kachwala — Built with passion and minimalism.</p>
+  <footer class="footer">
+    <p>© 2025 Taher Kachwala — Minimal portfolio.</p>
   </footer>
 
   <script src="script.js"></script>
