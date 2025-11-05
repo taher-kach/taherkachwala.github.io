@@ -501,3 +501,39 @@ body.loaded .parallax {
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-20px) scale(1.1); }
 }
+
+/* 🌟 Glowing Name Effect */
+.glow {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(14,165,233,0.5),
+                 0 0 20px rgba(14,165,233,0.3),
+                 0 0 30px rgba(14,165,233,0.2);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(14,165,233,0.8),
+                 0 0 45px rgba(14,165,233,0.5),
+                 0 0 60px rgba(14,165,233,0.3);
+  }
+}
+
+/* 🖋️ Typewriter Cursor Fix */
+#typewriter {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #0ea5e9;
+  white-space: nowrap;
+  border-right: 3px solid #0ea5e9;
+  width: fit-content;
+  overflow: hidden;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { border-color: #0ea5e9; }
+  51%, 100% { border-color: transparent; }
+}
