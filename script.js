@@ -1,4 +1,4 @@
-// ✅ Loader Fade-Out
+// ✅ Loader
 window.addEventListener("load", () => {
   const loader = document.getElementById("page-loader");
   setTimeout(() => {
@@ -7,49 +7,19 @@ window.addEventListener("load", () => {
   }, 700);
 });
 
-// 🖋️ Typing Animation for Home Section
-document.addEventListener("DOMContentLoaded", () => {
-  const typewriter = document.getElementById("typewriter");
-  const introSubtext = document.getElementById("intro-subtext");
-  const introButtons = document.getElementById("intro-buttons");
-
-  const text = "Hi, I’m Taher Kachwala";
-  let i = 0;
-
-  function type() {
-    if (i < text.length) {
-      typewriter.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, 100);
-    } else {
-      typewriter.style.borderRight = "none";
-      setTimeout(() => {
-        introSubtext.style.display = "block";
-        introSubtext.classList.add("fade-in", "show");
-        introButtons.style.display = "flex";
-        introButtons.classList.add("fade-in", "show");
-      }, 400);
-    }
-  }
-
-  setTimeout(type, 1200); // Start typing after loader fade
-});
-
 // ✅ Mobile Menu
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
+menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
 
-// ✅ Active Nav Link Highlight
+// ✅ Active Nav Links
 const sections = document.querySelectorAll("section");
 const navItems = document.querySelectorAll(".nav-links a");
 window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 80;
-    if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+    if (scrollY >= sectionTop) current = section.id;
   });
   navItems.forEach(a => {
     a.classList.remove("active");
@@ -57,7 +27,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// ✅ Scroll Reveal Animation
+// ✅ Scroll Reveal
 const revealElements = document.querySelectorAll('.reveal');
 const revealOnScroll = () => {
   const triggerBottom = window.innerHeight * 0.85;
@@ -70,7 +40,41 @@ const revealOnScroll = () => {
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 
-// ✅ EmailJS Integration
+// ✅ Typing Animation with Glow
+document.addEventListener("DOMContentLoaded", () => {
+  const typewriter = document.getElementById("typewriter");
+  const introSubtext = document.getElementById("intro-subtext");
+  const introButtons = document.getElementById("intro-buttons");
+  const text = "Hi, I'm Taher Kachwala";
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      typewriter.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 100);
+    } else {
+      typewriter.classList.add("glow");
+      typewriter.style.borderRight = "none";
+      setTimeout(() => {
+        introSubtext.style.display = "block";
+        introButtons.style.display = "flex";
+        introSubtext.classList.add("fade-in", "show");
+        introButtons.classList.add("fade-in", "show");
+      }, 500);
+    }
+  }
+  setTimeout(type, 900);
+});
+
+// ✅ Dark/Light Mode
+const themeBtn = document.getElementById("theme-btn");
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  themeBtn.textContent = document.body.classList.contains("dark") ? "🌙" : "☀️";
+});
+
+// ✅ EmailJS
 (function() {
   emailjs.init("QRv3MCk-QXrWfU1g9");
 })();
@@ -86,6 +90,6 @@ contactForm.addEventListener("submit", function(e) {
       setTimeout(() => toast.remove(), 3500);
       contactForm.reset();
     }, (error) => {
-      alert("Failed to send message: " + JSON.stringify(error));
+      alert("Error: " + JSON.stringify(error));
     });
 });
