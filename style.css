@@ -64,3 +64,23 @@ body.light { background: #f8fafc; color: #111827; }
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
 }
+
+/* 🌐 Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.icon {
+  width: 36px;
+  height: 36px;
+  color: #0ea5e9;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  color: #38bdf8;
+}
+
